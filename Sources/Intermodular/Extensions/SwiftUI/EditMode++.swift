@@ -22,3 +22,12 @@ extension EditMode {
         }
     }
 }
+
+@available(iOS 13.0, tvOS 13.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+extension Optional where Wrapped == Binding<EditMode> {
+    var isEditing: Bool {
+        self?.wrappedValue.isEditing == true
+    }
+}
